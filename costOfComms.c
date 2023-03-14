@@ -19,10 +19,10 @@ int main(void){
 
 	MPI_Init(NULL, NULL);
 
-	srand(time(NULL) + myRank); //seed generated with time + myRank to generate a thread-safe random number
-
 	MPI_Comm_rank(MPI_COMM_WORLD, &myRank);
 	MPI_Comm_size(MPI_COMM_WORLD, &commSize);
+	
+	srand(time(NULL) + myRank); //seed generated with time + myRank to generate a thread-safe random number
 
 	if(commSize != 2){
 		printf("2 Processes only for this program");
