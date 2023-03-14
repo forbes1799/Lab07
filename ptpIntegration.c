@@ -1,5 +1,6 @@
 #include <mpi.h>
 #include <stdio.h>
+#include <math.h>
 
 
 
@@ -100,5 +101,9 @@ double indieRankWork(int commSz, int myRank){
 		sum += 0.5*width*(func(x) + func(y));
     }
 	return sum;
+}
+
+double func(double x){
+	return sin(x);	
 }
 
